@@ -82,7 +82,7 @@ const ProfileDropdown = ({ openState, onClose, user }) => {
     // Handle theme toogle
     const [isDarkMode, setIsDarkMode] = useState(false)
     const handleToogleBtn = () => {
-        const theme = localStorage.getItem("theme") || "light"
+        const theme = localStorage.getItem("theme") || "dark"
         if (theme === "dark") setIsDarkMode(true)
         else { setIsDarkMode(false) }
     }

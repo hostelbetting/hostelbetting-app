@@ -128,7 +128,7 @@ export const EditProfilePage = () => {
         <div><span>Forget password? </span><Link to="/auth/reset-password" className='hb-url-colored'><span>Reset password</span><span><i className="ri-arrow-right-wide-line"></i></span></Link></div>
       </div>
       <div className='mb-4'>
-        <button className='hb-btn hb-btn-primary__grad' onClick={handleSave}>{loading && <LoadingSpinnerLine />}<span>Save changes</span></button>
+        <button className='hb-btn hb-btn-primary__grad' onClick={handleSave} disabled={loading}>{loading && <LoadingSpinnerLine />}<span>Save changes</span></button>
       </div>
       <CropperPopup openState={croperOpenState} onClose={() => setCropperOpenState(false)} imgSrc={imgInput} onCrop={handleCrop} />
     </div>
