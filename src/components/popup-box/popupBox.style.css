@@ -1,0 +1,139 @@
+.hb-popup-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: radial-gradient(#5d5d5d33, #5d5d5dc4);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    overflow: auto;
+    z-index: 10;
+}
+
+.hb-popup-box {
+    min-width: 20em;
+    min-height: 10em;
+    background-color: var(--hb-bg-color);
+    box-shadow: 0 0 9px 0 #9b9b9b5a;
+    border-radius: 10px;
+    animation: popupInAnim 0.4s 1;
+    overflow: hidden;
+}
+
+@keyframes popupInAnim {
+    0% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hb-popup-box-close-anim {
+    animation: popupOutAnim 0.3s 1;
+}
+
+@keyframes popupOutAnim {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+/***** Crop popup box *****/
+.hb-crop-popup-content-box {
+    width: fit-content;
+    height: 80vh;
+    display: grid;
+    gap: 0.5em;
+    grid-template-rows: 1fr auto;
+}
+
+.hb-cropper-box {
+    width: 80vw;
+    height: 70vh;
+}
+
+/***** End Crop popup box *****/
+
+/***** Otp popup css *****/
+.hb-otp-box {
+    width: 25em;
+    padding: 1em;
+}
+
+.hb-otp-input-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.hb-otp-input {
+    width: 3em;
+    height: 3em;
+    padding: 0.5em;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: var(--hb-bg-light);
+    color: inherit;
+    transition: 0.3s;
+}
+
+.hb-otp-input:focus{
+    box-shadow: 0 0 10px 1px var(--hb-col-blue);
+}
+
+/***** End Otp popup css *****/
+
+
+/***** Responsive css starts here *****/
+@media screen and (max-width: 768px) {
+    .hb-cropbox-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .hb-crop-popup-content-box {
+        width: 100vw;
+        height: 100svh;
+    }
+
+    .hb-cropper-box {
+        width: 100vw;
+        height: 90svh;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .hb-otp-box {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .hb-popup-box {
+        min-width: unset;
+    }
+
+    .hb-otp-input {
+        /* width: 2em;
+        height: 2em; */
+        font-size: 1em;
+    }
+}
+
+/***** End Responsive css starts here *****/

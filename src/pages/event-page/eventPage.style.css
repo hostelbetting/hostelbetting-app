@@ -1,0 +1,129 @@
+.hb-event-item {
+    list-style: none;
+    width: 50em;
+    margin-bottom: 2em;
+}
+
+.hb-event-item-detail-box {
+    padding: 1em;
+    background-color: var(--hb-bg-light);
+    margin-bottom: 0.5em;
+    border-radius: 20px;
+    position: relative;
+}
+
+.hb-event-paused {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #34343485;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hb-winner-trophy-logo{
+    width: 150px;
+    position: absolute;
+}
+
+.hb-event-item-team-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+
+    & .hb-event-item-team-item {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.hb-event-item-btn-box {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+
+    & button {
+        width: 90%;
+        justify-content: center;
+        justify-self: center;
+    }
+}
+
+.hb-event-time-line {
+    background-color: var(--hb-bg-transparent-blue);
+    width: fit-content;
+    padding: 0.1em 0.7em;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+.hb-clock-lottie {
+    width: 35px;
+}
+
+.hb-versus-logo-box {
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+}
+
+.hb-vs-lottie {
+    width: 80px;
+}
+
+/***** Bet popup *****/
+.hb-bet-popup {
+    width: 30em;
+    padding: 1em;
+    height: 15em;
+    display: grid;
+}
+
+.hb-bet-popup-btn-box {
+    align-self: flex-end;
+
+    & button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/***** End Bet popup *****/
+
+
+/***** Responsive css starts here *****/
+@media screen and (max-width: 991px) {
+    .hb-event-item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .hb-bet-popup {
+        width: 90vw;
+        min-width: unset !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .hb-event-item-detail-box {
+        padding: 0.5em;
+    }
+
+    .hb-vs-lottie {
+        width: 50px;
+    }
+}
+
+/***** End Responsive css starts here *****/

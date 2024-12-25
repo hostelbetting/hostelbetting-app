@@ -1,0 +1,69 @@
+.hb-registration-continer {
+    display: flex;
+    justify-content: center;
+}
+
+.hb-registration-content-warper {
+    width: 40em;
+    height: 70vh;
+    margin-top: 5vh;
+    background: linear-gradient(0deg, var(--hb-bg-color), var(--hb-bg-light));
+    position: relative;
+    border-radius: 20px;
+}
+
+.hb-registration-content-warper::after {
+    content: "";
+    position: absolute;
+    inset: -0.1em;
+    background: linear-gradient(50deg, #ff00b7, #ff0080, #8c00ff, #0015ff, #00c0ff);
+    filter: blur(30px);
+    background-size: 400%;
+    opacity: 0.5;
+    z-index: -1;
+    animation: backdropAnim 30s linear infinite;
+}
+
+@keyframes backdropAnim {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.hb-registration-content-box {
+    padding: 2em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    display: grid;
+    grid-template-rows: max-content;
+}
+
+/***** Responsive css starts here *****/
+@media screen and (max-width: 768px) {
+    .hb-registration-content-warper{
+        width: 80vw;
+        height: 80svh;
+    }
+
+    .hb-registration-content-box {
+        padding: 1em;
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .hb-registration-content-warper{
+        width: 90vw;
+    }
+}
+
+/***** End Responsive css starts here *****/

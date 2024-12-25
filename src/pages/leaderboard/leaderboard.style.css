@@ -1,0 +1,26 @@
+.hb-leaderboard-item {
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    gap: 0.7em;
+    list-style: none;
+    padding: 0.7em 1em;
+    border-radius: 20px;
+    background-color: var(--hb-bg-transparent-blue);
+    margin-bottom: 0.5em;
+}
+
+.hb-leader-1 {
+    background: linear-gradient(45deg, #ae8625, #f7ef8a, #d2ac47, #edc967);
+    color: #212529;
+}
+
+.hb-leader-2 {
+    background: linear-gradient(340deg, #c5c6c8, #a5a6a8, #f5f5f5, #c9cacc);
+    color: #212529;
+}
+
+.hb-leader-3 {
+    background: linear-gradient(45deg, #955249, #dd926b, #733020);
+    color: #ffff;
+}

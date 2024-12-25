@@ -1,0 +1,60 @@
+/***** Notification nav css *****/
+.hb-sub-nav {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.hb-sub-nav-opt-btn {
+    border: none;
+    outline: none;
+    padding: 0.3em 0.7em;
+    border-radius: 20px;
+    background-color: var(--hb-bg-light);
+    color: var(--bg-color);
+    transition: 0.2s;
+}
+
+.hb-sub-nav-opt-btn-active {
+    background-color: var(--hb-bg-transparent-blue);
+}
+
+.hb-notification-date-flag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+}
+
+.hb-notification-date-flag::after,
+.hb-notification-date-flag::before {
+    content: "";
+    width: 5em;
+    height: 1px;
+    background-color: var(--hb-col-m-dark);
+}
+
+/***** End Notification nav css *****/
+
+
+/***** Notification Item css *****/
+.hb-notification-item {
+    list-style: none;
+    padding: 0.5em 1em;
+    background-color: var(--hb-bg-light);
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    transition: 0.3s;
+}
+
+.hb-notification-item:active {
+    filter: brightness(0.9);
+}
+
+.hb-notification-unread {
+    background-color: var(--hb-bg-transparent-blue);
+}
+
+/***** End Notification Item css *****/

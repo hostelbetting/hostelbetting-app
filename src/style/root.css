@@ -1,0 +1,18 @@
+:root {
+    --hb-bg-light: #ebebeb;
+    --hb-col-pink: #ff0075;
+    --hb-col-blue: #4c97ff;
+    --hb-col-m-dark: #9d9d9d;
+    --hb-bg-transparent-blue: #94b8ff38;
+    --hb-bg-color: #ffff;
+    --hb-color: #212529;
+    --hb-col-light: #4e4e4e94;
+}
+
+.dark-theme {
+    --hb-bg-color: #121022;
+    --hb-color: #e6e6e6;
+    --hb-bg-light: #323232;
+    --hb-col-light: #acacac94;
+    --hb-col-m-dark: #717171;
+}

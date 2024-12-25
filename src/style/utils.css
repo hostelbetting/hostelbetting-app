@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.container {
+    margin-top: 2em;
+    animation: fadeInAnim 0.4s 1;
+    margin-bottom: 1em;
+    min-height: calc(100vh - 10em);
+}
+
+.hb-page-header {
+    margin-bottom: 1em;
+    display: flex;
+    gap: 0.7em;
+
+    & h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0;
+    }
+}
+
+.hb-width-100 {
+    width: 100%;
+}
+
+.hb-bg-color {
+    background-color: var(--hb-bg-color);
+}
+
+/***** Button css *****/
+.hb-btn {
+    border: 1px solid transparent;
+    outline: none;
+    padding: 0.3em 1em;
+    background-color: transparent;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    transition: 0.3s;
+    color: var(--hb-color);
+}
+
+.hb-btn:hover {
+    filter: brightness(0.8);
+}
+
+.hb-btn:active {
+    filter: brightness(1.3);
+}
+
+.hb-btn:disabled {
+    filter: brightness(0.5);
+}
+
+.hb-btn-primary__grad {
+    background: linear-gradient(30deg, #8c00ff, var(--hb-col-pink));
+    color: #ffff;
+}
+
+.hb-btn-bordered__grad {
+    position: relative;
+    color: var(--hb-color);
+}
+
+.hb-btn-bordered__grad::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 3px;
+    background: linear-gradient(30deg, #8c00ff, var(--hb-col-pink));
+    mask:
+        linear-gradient(var(--hb-bg-color) 0 0) content-box,
+        linear-gradient(var(--hb-bg-color) 0 0);
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.hb-btn-primary__transparent {
+    background-color: var(--hb-bg-transparent-blue);
+}
+
+.hb-btn-linear-lg {
+    width: 40em;
+    padding: 0.5em 1em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+/***** End Button css *****/
+
+
+/***** Display props *****/
+.hb-display__inline-flex {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.hb-display__inline-grid {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.hb-inline-gird-2 {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em;
+}
+
+.justify-self-end {
+    justify-self: end;
+}
+
+.justify-self-center {
+    justify-self: center;
+}
+
+.justify-self-start {
+    justify-self: start;
+}
+
+/***** End Display props *****/
+
+/***** Font css *****/
+.hb-f-sm {
+    font-size: 0.9em;
+}
+
+.hb-f-lg {
+    font-size: 1.15em;
+}
+
+.hb-text-fade {
+    color: var(--hb-col-light);
+}
+
+.hb-font-lobster {
+    font-family: "Lobster", serif;
+    font-style: normal;
+}
+
+/***** End Font css *****/
+
+/***** Url css *****/
+.hb-url-unicolor {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hb-url-colored {
+    text-decoration: none;
+    color: var(--hb-col-blue);
+}
+
+.hb-url-hovcolor {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+.hb-url-hovcolor:hover {
+    color: var(--hb-col-blue);
+}
+
+/***** End Url css *****/
+
+/***** lottie css *****/
+.hb-blank-lottie {
+    width: 350px;
+}
+
+/***** End lottie css *****/
+
+
+/***** Toggler css *****/
+.hb-toggler-track {
+    width: 50px;
+    height: 25px;
+    background-color: var(--hb-bg-light);
+    border-radius: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 0 5px;
+    transition: 0.2s;
+    cursor: pointer;
+    position: relative;
+
+    & i {
+        font-size: 0.9em;
+    }
+}
+
+.hb-toggler-track:hover {
+    scale: 1.1;
+}
+
+.hb-toggler-track:active {
+    filter: brightness(0.9);
+}
+
+.hb-toggler-thumb {
+    width: 20px;
+    height: 15px;
+    background-color: #7b7b7b;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+#toogle-check-box:checked~.hb-toggler-track .hb-toggler-thumb {
+    transform: translateX(25px);
+    background-image: linear-gradient(45deg, var(--hb-col-pink), var(--hb-col-blue));
+    width: 15px;
+}
+
+/* for theme toggler  */
+.hb-theme-sun-logo {
+    display: none;
+}
+
+.hb-theme-sun-logo,
+.hb-theme-moon-logo {
+    position: absolute;
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+#toogle-check-box:checked~.hb-toggler-track .hb-theme-sun-logo {
+    display: block;
+}
+
+#toogle-check-box:checked~.hb-toggler-track .hb-theme-moon-logo {
+    display: none;
+}
+
+/***** End Toggler css *****/
+
+/***** Cursor css *****/
+.c-pointer {
+    cursor: pointer !important;
+}
+
+/***** End Cursor css *****/
+
+/***** Animations css *****/
+.hb-fadein-anim {
+    animation: fadeInAnim 0.3s 1;
+}
+
+@keyframes fadeInAnim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hb-fadeout-anim {
+    animation: fadeOutAnim 0.3s 1;
+}
+
+@keyframes fadeOutAnim {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/***** End Animations css *****/
+
+
+/***** Responsive css starts here *****/
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: unset;
+    }
+
+    .hb-btn-linear-lg {
+        width: calc(100vw - 2em);
+    }
+}
+
+/***** End Responsive css starts here *****/

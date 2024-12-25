@@ -1,0 +1,138 @@
+.hb-profile-details-box {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+    margin-bottom: 5em;
+}
+
+.hb-profile-img-box {
+    display: grid;
+}
+
+.hb-profile-img-box img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.hb-profile-edit-btn {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--hb-bg-light);
+    color: var(--hb-color);
+    border: 3px solid var(--hb-bg-color);
+    outline: none;
+    align-self: flex-end;
+    justify-self: end;
+    margin: 0.5em;
+    transition: 0.3s;
+}
+
+.hb-profile-edit-btn:active {
+    filter: brightness(0.8);
+}
+
+.gf-profile-stat-box {
+    width: 100%;
+    background-color: var(--hb-bg-light);
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    display: grid;
+    gap: 0.5em;
+    position: relative;
+}
+
+.gf-profile-stat-box::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--hb-bg-color);
+    position: absolute;
+    align-self: center;
+}
+
+
+/***** History Item css *****/
+.hb-bet-history-item {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 0.7em;
+    border-radius: 10px;
+    margin-bottom: 0.7em;
+}
+
+.hb-bet-history-item:last-child {
+    margin-bottom: 0;
+}
+
+.hb-bet-history-item__green {
+    background-color: #51ba5132;
+
+    & .gf-history-effect-col {
+        color: #1f6f06;
+    }
+}
+
+.hb-bet-history-item__red {
+    background-color: #ba515132;
+
+    & .gf-history-effect-col {
+        color: #ca2415;
+    }
+}
+
+.hb-bet-history-item__blue {
+    background-color: var(--hb-bg-transparent-blue);
+
+    & .gf-history-effect-col {
+        color: #12609c;
+    }
+}
+
+.hb-bet-history-item-stat-box {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.hb-current-status-para {
+    background-color: #8a8a8a44;
+    padding: 0.1em 0.5em;
+    border-radius: 20px;
+    font-size: 0.8em;
+}
+
+/***** End History Item css *****/
+
+/***** Edit profile page css *****/
+.hb-edit-profile-img-edit-box img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+/***** End Edit profile page css *****/
+
+/***** Responsive css starts here *****/
+@media screen and (max-width: 600px) {
+    .hb-profile-details-box {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .hb-profile-detail-stat-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .hb-profile-img-box img {
+        width: 170px;
+    }
+}
+
+/***** End Responsive css starts here *****/

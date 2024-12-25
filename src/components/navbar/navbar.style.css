@@ -1,0 +1,187 @@
+header {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5em;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 5;
+}
+
+.hb-navbar {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 0.7em 1em;
+    background-color: transparent;
+    width: 80%;
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.hb-navbar::before {
+    content: "";
+    background: linear-gradient(to left, #ff00b7, #ff0080, #8c00ff, #0015ff, #00c0ff);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.hb-title-anim {
+    animation: navTitleAnim 0.3s 1;
+}
+
+@keyframes navTitleAnim {
+    0% {
+        transform: translateY(20px);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.hb-nav-opt-box {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-self: end;
+}
+
+.hb-nav-opt-button {
+    border: none;
+    outline: none;
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: 0.3s;
+    color: #ffff;
+
+    & .nav-ico {
+        font-size: 1.7em;
+        filter: drop-shadow(0px 0px 1px #777777);
+    }
+}
+
+.hb-nav-opt-button:hover {
+    box-shadow: 0 0 10px 0 #5858584a;
+    background-color: #4e4e4e1f;
+}
+
+.hb-nav-opt-button:active {
+    filter: brightness(0.8);
+}
+
+.hb-nav-wallet-btn {
+    border-radius: 20px;
+    width: fit-content;
+    gap: 0.5em;
+}
+
+.hb-notification-badge {
+    padding: 1px 3px;
+    background-color: #ff1d1d;
+    position: absolute;
+    border-radius: 20px;
+    text-align: center;
+    color: #ffff;
+    justify-self: end;
+    align-self: flex-end;
+    font-size: 0.8em;
+    transform: translate(-7px, -10px);
+    cursor: pointer;
+}
+
+/***** Profile dropdown css *****/
+.hb-profile-dropdown {
+    width: 18em;
+    border-radius: 20px !important;
+}
+
+.hb-profile-dropdown-profile-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    padding: 0.5em;
+    border-radius: 20px;
+    background-color: var(--hb-bg-light);
+}
+
+.hb-profile-dropdown-opt-list {
+    padding: 0;
+
+    & li {
+        list-style: none;
+        margin-bottom: 0.3em;
+    }
+}
+
+.hb-profile-dropdown-opt-list li:last-child {
+    margin-bottom: 0;
+}
+
+.hb-linear-opt-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0.3em 0.6em;
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    width: 100%;
+    transition: 0.2s;
+    color: var(--hb-color);
+}
+
+.hb-linear-opt-btn:hover {
+    background-color: var(--hb-bg-light);
+}
+
+.hb-linear-opt-btn:active {
+    filter: brightness(0.9);
+}
+
+.hb-profile-dropdown-end-box {
+    padding-top: 0.4em;
+    border-top: 1px solid var(--hb-bg-light);
+}
+
+/***** End Profile dropdown css *****/
+
+
+/***** Responsive css starts here *****/
+@media screen and (max-width: 1200px) {
+    .hb-navbar {
+        width: 60em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .hb-navbar {
+        width: calc(100vw - 1em);
+    }
+}
+
+@media screen and (max-width: 478px) {
+    .hb-nav-opt-box {
+        gap: 0.5em;
+    }
+
+    .hb-navbar {
+        padding: 0.5em;
+    }
+}
+
+/***** End Responsive css starts here *****/

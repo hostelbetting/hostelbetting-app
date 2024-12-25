@@ -1,0 +1,47 @@
+.hb-pop-input {
+    padding: 0.5em 1em;
+    min-height: 3.5em;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--hb-col-m-dark);
+    position: relative;
+    cursor: text;
+}
+
+.hb-pop-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: 0.2s;
+    color: var(--hb-color);
+}
+
+.hb-pop-input-placeholder {
+    position: absolute;
+    transition: 0.2s;
+    cursor: text;
+}
+
+.hb-pop-input:focus-within {
+    border-color: var(--hb-col-blue);
+}
+
+.hb-input-active {
+    & .hb-pop-input-placeholder {
+        transform: translateY(-60%);
+        font-size: 0.9em;
+        color: var(--hb-col-blue);
+    }
+
+    & input {
+        transform: translateY(35%);
+    }
+
+}
+
+.hb-input-disabled{
+    background-color: #6c6c6c2e;
+    pointer-events: none;
+}

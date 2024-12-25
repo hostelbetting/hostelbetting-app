@@ -1,0 +1,30 @@
+.hb-wallet-earning-show-box {
+    background-color: var(--hb-bg-light);
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.hb-wallet-earning-item {
+    border-bottom: 2px solid var(--hb-bg-color);
+    padding: 0.4em 0.7em;
+}
+
+.hb-wallet-earning-item:last-child{
+    border-bottom:  none;
+}
+
+
+/***** Order item style *****/
+.hb-order-history-item {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0.7em;
+    background-color: var(--hb-bg-transparent-blue);
+    margin-bottom: 0.5em;
+}
+
+/***** End Order item style *****/

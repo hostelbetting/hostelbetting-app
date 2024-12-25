@@ -1,0 +1,46 @@
+.hb-home-item {
+    width: 50em;
+    height: 15em;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    position: relative;
+    color: #ffff;
+    border-radius: 20px;
+}
+
+.hb-home-item-back-img-box {
+    width: inherit;
+    height: inherit;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        filter: grayscale(0.5);
+        opacity: 0.9;
+        object-fit: cover;
+    }
+}
+
+.hb-home-item-title-box {
+    position: absolute;
+    align-self: center;
+    z-index: 1;
+    padding: 1em;
+}
+
+.hb-home-item .hb-event-time-line {
+    background-color: #5489b685;
+    position: absolute;
+    align-self: flex-end;
+    margin: 0.5em;
+}
+
+/***** Responsive css starts here *****/
+@media screen and (max-width: 991px) {
+    .hb-home-item {
+        width: 100%;
+    }
+}
+
+/***** End Responsive css starts here *****/
