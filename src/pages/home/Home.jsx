@@ -104,7 +104,7 @@ const HomeItem = ({ data }) => {
         <h1 className='mb-0'>{data?.title}</h1>
         <p>{data?.eventCount} ongoing events</p>
       </div>
-      <div className='hb-home-item-back-img-box'><img src={require("../../assets/img/sample-img.jpg")} alt="" /></div>
+      <div className='hb-home-item-back-img-box'><img src={data?.previewImg} alt="" /></div>
       {timeRemaining && <div className='hb-event-time-line'>
         <span>
           <Lottie animationData={clockLottie} loop={true} className='hb-clock-lottie' />
