@@ -24,7 +24,7 @@ function App() {
   // Handle theme load
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    if (savedTheme === 'dark' || savedTheme === null) {
       document.body.classList.add('dark-theme');
     }
   }, [])
