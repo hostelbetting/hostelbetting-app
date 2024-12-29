@@ -34,7 +34,6 @@ export const AuthProvider = ({ children }) => {
                 isAuthenticated === null ? <LoaderBox />
                     : children
             }
-
         </AuthContext.Provider>
     )
 }
@@ -42,9 +41,24 @@ export const AuthProvider = ({ children }) => {
 export default AuthContext;
 
 const LoaderBox = () => {
+    const [waitText, setWaitText] = useState(false);
+    const [LongwaitText, setLongWaitText] = useState(false);
+    useEffect(() => {
+        setTimeout(() => setWaitText(true), [5000]);
+        setTimeout(() => setLongWaitText(true), [15000]);
+    }, [])
     return (
-        <div className='d-flex align-items-center justify-content-center hb-bg-color' style={{ height: '100vh', width: '100vw' }}>
-            <LoadingSpinner1 size={100} />
+        <div className='hb-page-loader-box'>
+            <div className='hb-fadein-anim'>
+                <img src={require("../assets/img/hostelbetting-logo-fill.png")} alt="" />
+            </div>
+            {waitText && <div className='d-flex gap-2 align-items-center hb-fadein-anim'>
+                <LoadingSpinner1 />
+                <span>Please wait</span>
+            </div>}
+            {LongwaitText && <div className='d-flex gap-2 align-items-center hb-fadein-anim'>
+                <span>Don't worry! It can take few seconds</span>
+            </div>}
         </div>
     )
 }

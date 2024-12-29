@@ -30,6 +30,32 @@
     background-color: var(--hb-bg-color);
 }
 
+.hb-page-loader-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.3em;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--hb-bg-color);
+}
+
+.hb-page-loader-box img{
+    width: 140px;
+    border-radius: 20px;
+    animation: pageLoaderAnim 1.5s infinite;
+}
+
+@keyframes pageLoaderAnim {
+    0%, 100%{
+        filter: brightness(1.5);
+    }
+    50%{
+        filter: brightness(0.5);
+    }
+}
+
 /***** Button css *****/
 .hb-btn {
     border: 1px solid transparent;
@@ -292,6 +318,12 @@
 
     .hb-btn-linear-lg {
         width: calc(100vw - 2em);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .hb-blank-lottie {
+        width: 250px;
     }
 }
 

@@ -11,7 +11,7 @@ import { EventPage } from '../pages/event-page/EventPage'
 import { BettingPage } from '../pages/bidding-page/BettingPage'
 import { BettingConfirmPage } from '../pages/bidding-page/BettingConfirmPage'
 import { ErrorPage } from '../pages/error-page/ErrorPage'
-import { AuthenticationPage, Login, Registration } from '../pages/registration-page/AuthenticationPage'
+import { AuthenticationPage, Login, Registration, VerificationPage } from '../pages/registration-page/AuthenticationPage'
 import { PreloginRoute } from './Prelogin.routes'
 import { PrivateRoute } from './Private.routes'
 import { PasswordResetPage } from '../pages/registration-page/PasswordResetPage'
@@ -41,6 +41,7 @@ export const AppRoutes = () => {
       <Route path='/auth' element={<PreloginRoute children={<AuthenticationPage />} />} >
         <Route path='/auth' element={<Navigate to={'login'} />} />
         <Route path='registration' element={<Registration />} />
+        <Route path='verify' element={<VerificationPage />} />
         <Route path='login' element={<Login />} />
       </Route>
       <Route path='/auth/reset-password' element={<PasswordResetPage />} />

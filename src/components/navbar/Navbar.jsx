@@ -174,8 +174,8 @@ const ProfileDropdown = ({ openState, onClose, user }) => {
                 </div>
             </AuthenticatedContainer>
             <div className='hb-profile-dropdown-end-box'>
-                <div><Link to="/privacy" className='hb-url-colored'>Privacy & guidelines</Link></div>
-                <div><Link to="/terms-conditions" className='hb-url-colored'>Terms & conditions</Link></div>
+                <div><Link to="/privacy" className='hb-url-colored' onClick={onClose}>Privacy & guidelines</Link></div>
+                <div><Link to="/terms-conditions" className='hb-url-colored' onClick={onClose}>Terms & conditions</Link></div>
             </div>
         </Dropdown>
     )

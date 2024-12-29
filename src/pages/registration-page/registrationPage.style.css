@@ -41,11 +41,19 @@
 
 .hb-registration-content-box {
     padding: 2em;
+    padding-bottom: 0;
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
     display: grid;
     grid-template-rows: max-content;
+}
+
+.hb-auth-container-btn-box{
+    padding-bottom: 2em;
+    background-color: var(--hb-bg-color);
+    position: sticky;
+    bottom: 0;
 }
 
 /***** Responsive css starts here *****/

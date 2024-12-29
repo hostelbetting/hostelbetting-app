@@ -38,7 +38,7 @@ function App() {
         <AppRoutes />
       </main>
       <footer className='text-center hb-text-fade m-2'>
-        <div className='d-flex align-items-center gap-1 justify-content-center'>
+        <div className='d-flex flex-wrap align-items-center gap-1 justify-content-center'>
           <span>hostelbetting.fun&copy;2024</span>
           <i className="bi bi-dot"></i>
           <Link to="/privacy" target='_blank' className='hb-url-hovcolor'>privacy policy</Link>

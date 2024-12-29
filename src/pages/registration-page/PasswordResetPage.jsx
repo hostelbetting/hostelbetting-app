@@ -101,7 +101,7 @@ export const PasswordResetPage = () => {
                             <p className='mt-2 hb-text-fade'><span><i className="ri-information-line"></i>Use a strong password</span></p>
                         </div>
                     }
-                    <div className='align-self-end'>
+                    <div className='align-self-end hb-auth-container-btn-box'>
                         <button className="hb-btn hb-btn-primary__grad py-2 w-100 justify-content-center rounded-5" onClick={handleCahngeOtp} disabled={loading}>{loading && <LoadingSpinnerLine />}{!activeChange ? "Verify email" : "Change password"}</button>
                     </div>
                 </div>
