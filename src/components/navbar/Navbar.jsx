@@ -38,7 +38,7 @@ export const Navbar = () => {
                     {
                         tabName === "Fun app" ?
                             <div className='d-flex align-items-center gap-1'>
-                                <img src={require("../../assets/img/hostelbetting-logo-fill.png")} width={42} alt="" className='rounded-3' />
+                                <img src={require("../../assets/img/hostelbetting-logo-fill.webp")} width={42} alt="" className='rounded-3' />
                                 <div className='hb-font-lobster fs-4'>.fun</div>
                             </div> :
                             tabName

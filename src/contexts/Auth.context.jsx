@@ -50,7 +50,7 @@ const LoaderBox = () => {
     return (
         <div className='hb-page-loader-box'>
             <div className='hb-fadein-anim'>
-                <img src={require("../assets/img/hostelbetting-logo-fill.png")} alt="" />
+                <img src={require("../assets/img/hostelbetting-logo-fill.webp")} alt="" />
             </div>
             {waitText && <div className='d-flex gap-2 align-items-center hb-fadein-anim'>
                 <LoadingSpinner1 />
