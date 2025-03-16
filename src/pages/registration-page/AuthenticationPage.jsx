@@ -79,8 +79,9 @@ export const Registration = () => {
     return (
         <div className='hb-registration-content-warper'>
             <div className='hb-registration-content-box'>
-                <div className='text-center mb-4'>
+                <div className='text-center mb-4 d-grid align-items-center'>
                     <h3>Create new Account</h3>
+                    <button className="hb-nav-opt-button mx-3 align-self-center" style={{position: "absolute", left: 0}} onClick={()=>navigate("/home")}><i class="ri-arrow-left-line fs-5"></i></button>
                 </div>
                 <div className='mb-3'>
                     <div className='mb-3'>
@@ -254,8 +255,9 @@ export const Login = () => {
     return (
         <div className='hb-registration-content-warper'>
             <div className='hb-registration-content-box'>
-                <div className='mb-5 text-center'>
+            <div className='text-center mb-4 d-grid align-items-center'>
                     <h3>Login</h3>
+                    <button className="hb-nav-opt-button mx-3 align-self-center" style={{position: "absolute", left: 0}} onClick={()=>navigate("/home")}><i class="ri-arrow-left-line fs-5"></i></button>
                 </div>
                 <div>
                     <div className='mb-2'><button className='hb-btn hb-btn-primary__transparent' onClick={() => navigate(`/auth/registration?redirect=${redirectUri}`)}><span>Register new account</span><span><i class="ri-arrow-right-line"></i></span></button></div>
