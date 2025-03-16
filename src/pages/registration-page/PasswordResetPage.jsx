@@ -10,7 +10,7 @@ export const PasswordResetPage = () => {
     // page title
     useEffect(() => {
         document.title = "Reset password"
-    },[])
+    }, [])
 
     const navigate = useNavigate();
     // handle otp
@@ -19,6 +19,7 @@ export const PasswordResetPage = () => {
     const [otp, setOtp] = useState("");
     const [token, setToken] = useState("");
     const [loading, setLoading] = useState(false)
+    const [otpLoading, setOtpLoading] = useState(false)
     const handleOtp = async () => {
         if (!email) {
             toast.error("Email is required");
@@ -26,17 +27,16 @@ export const PasswordResetPage = () => {
         }
 
         try {
-            setLoading(true);
+            setOtpLoading(true);
             await axios.post("/user/create-otp", { email, subject: "Otp request to Reset password", type: "reset-password" })
                 .then(res => {
-                    setToken(res?.data?.data?.token)
                     setOpenOtp(true);
                 }
                 )
         } catch (error) {
             toast.error("Error on trying");
         }
-        setLoading(false)
+        setOtpLoading(false)
     }
 
     // setup password change
@@ -53,12 +53,12 @@ export const PasswordResetPage = () => {
             }
             setLoading(false)
         }
-        if (otp) checkOtp();
+        if (otp?.length > 0) checkOtp();
     }, [otp])
 
     // change password
     const [password, setpassword] = useState("");
-    const handleCahngeOtp = async () => {
+    const handleChangePassword = async () => {
         if (!activeChange) {
             setLoading(true);
             handleOtp();
@@ -72,7 +72,7 @@ export const PasswordResetPage = () => {
             }
 
             try {
-                await axios.patch("/user/reset-password", { token, otpCode: otp, password, email })
+                await axios.patch("/user/reset-password", { otpCode: otp, password, email })
                     .then(() => {
                         navigate("/home")
                     })
@@ -94,7 +94,7 @@ export const PasswordResetPage = () => {
                     </div>
                     {!activeChange ? <div>
                         <PopInput type='email' placeholder='Enter registered email id' onChange={e => setEmail(e)} value={email} />
-                        <p className='mt-2 hb-text-fade'><span><i className="ri-information-line"></i>You will recieve an otp to your registered email id</span></p>
+                        <p className='mt-2 hb-text-fade'><span><i className="ri-information-line"></i>Please check your mail box or spam box.</span></p>
                     </div> :
                         <div>
                             <PopInput type='password' placeholder='Enter new password' onChange={(e) => setpassword(e)} value={password} />
@@ -102,11 +102,11 @@ export const PasswordResetPage = () => {
                         </div>
                     }
                     <div className='align-self-end hb-auth-container-btn-box'>
-                        <button className="hb-btn hb-btn-primary__grad py-2 w-100 justify-content-center rounded-5" onClick={handleCahngeOtp} disabled={loading}>{loading && <LoadingSpinnerLine />}{!activeChange ? "Verify email" : "Change password"}</button>
+                        <button className="hb-btn hb-btn-primary__grad py-2 w-100 justify-content-center rounded-5" onClick={handleChangePassword} disabled={loading || otpLoading}>{(loading || otpLoading) && <LoadingSpinnerLine />}{!activeChange ? "Verify email" : "Change password"}</button>
                     </div>
                 </div>
             </div>
-            <OtpPopup openState={openOtp} onClose={() => setOpenOtp(false)} onSubmit={e => setOtp(e)} />
+            <OtpPopup openState={openOtp} onClose={() => setOpenOtp(false)} onSubmit={e => setOtp(e)} email={email} />
         </div>
     )
 }

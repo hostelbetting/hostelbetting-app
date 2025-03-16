@@ -122,7 +122,7 @@ const EventItem = ({ data }) => {
                                     <div className='d-flex align-items-center justify-content-center'>
                                         <Lottie animationData={winnerLottie} loop={false} className='hb-winner-trophy-logo' />
                                     </div>
-                                    <div className='fs-4'>Super 30</div>
+                                    <div className='fs-4'>{data?.winnerTeam?.teamName}</div>
                                 </div>
                             </div>
                             : <>

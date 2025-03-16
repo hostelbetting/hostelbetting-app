@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { PopupBox } from './PopupBox'
 
-export const OtpPopup = ({ openState, onClose, onSubmit, length = 4 }) => {
+export const OtpPopup = ({ openState, onClose, onSubmit, length = 4, email='' }) => {
     const [otp, setOtp] = useState(Array(length).fill(""));
     const [otpLine, setOtpLine] = useState('');
 
@@ -37,12 +37,13 @@ export const OtpPopup = ({ openState, onClose, onSubmit, length = 4 }) => {
             setOtp(otp.forEach(e => e = ""));
         }
     }, [otpLine]);
+    const maskEmail = (email) => email.replace(/^(.).*(.)@/, '$1***$2@');
     return (
         <PopupBox openState={openState}>
             <div className='hb-otp-box'>
                 <div className='mb-3'>
                     <h5>Verify your email</h5>
-                    <div>Enter the otp send to s***@gmail.com <span className='hb-url-colored' onClick={onClose}>Edit</span></div>
+                    <div>Enter the otp send to {maskEmail(email)} <span className='hb-url-colored' onClick={onClose}>Edit</span></div>
                 </div>
                 <div className='hb-otp-input-box'>
                     {

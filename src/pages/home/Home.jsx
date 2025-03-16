@@ -99,7 +99,7 @@ const HomeItem = ({ data }) => {
   }, [data]);
 
   return (
-    <div className='hb-home-item' onClick={() => navigate(`/events?tournamentId=${data?._id}`)}>
+    <div className='hb-home-item mb-3' onClick={() => navigate(`/events?tournamentId=${data?._id}`)}>
       <div className='hb-home-item-title-box'>
         <h1 className='mb-0'>{data?.title}</h1>
         <p>{data?.eventCount} ongoing events</p>
